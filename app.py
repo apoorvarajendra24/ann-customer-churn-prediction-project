@@ -13,7 +13,7 @@ import numpy as np
 import streamlit as st
 
 model = load_model('model.h5')
-with open('Label_encoder_gender.pkl','rb') as file:
+with open('label_encoder_gender.pkl','rb') as file:
     label_encoder_gender=pickle.load(file)
 with open('One_hot_encoder_geography.pkl','rb') as file:
     one_hot_encoder_geography=pickle.load(file)
@@ -60,4 +60,5 @@ st.write(f'CUstomer Churm Probablility: {predict_proba:.2f}')
 if predict_proba > 0.5:
     st.write("The Customer is likely to Churn.")
 else:
+
     st.write("The Customer is not likely to churn.")
